@@ -12,7 +12,7 @@ namespace Booking_Project
     [Binding]
     public class ChooseFirstOneSteps
     {
-        static IWebDriver driver = new ChromeDriver();
+        static IWebDriver driver = new FirefoxDriver();
         MainPage mainPage = new MainPage(driver);
         SignInPage signInPage = new SignInPage(driver);
         RegisteredMainPage regMainPage = new RegisteredMainPage(driver);
@@ -22,6 +22,7 @@ namespace Booking_Project
         public void GivenIHaveAccountCreated()
         {
             CustomMethods.GoToURL(driver, "https://booking.com");
+            Thread.Sleep(2000);
             mainPage.ChooseDefaultSettings();
             mainPage.GoToSignInPage();
 

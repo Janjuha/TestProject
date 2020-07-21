@@ -5,7 +5,7 @@
 Scenario: Choose first one hotel
 	Given I have account created
 	And I am in 'Home' page
-	When I set up destination as 'Liepāja'
+	When I set up destination as 'Barcelona'
 	And I set dates '28-08-2020' - '10-09-2020'
 	And I select '10' adults and '5' children
 	And I click on Search button
