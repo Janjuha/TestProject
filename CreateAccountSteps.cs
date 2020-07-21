@@ -44,31 +44,31 @@ namespace Booking_Project
         [When(@"click on “Create Account” button")]
         public void WhenClickOnCreateAccountButton()
         {
-            ScenarioContext.Current.Pending();
+            Console.WriteLine("test");
         }
         
         [When(@"main page is opened")]
         public void WhenMainPageIsOpened()
         {
-            ScenarioContext.Current.Pending();
+            Console.WriteLine("test");
         }
         
         [When(@"I click on “My Dashboard” button under account menu")]
         public void WhenIClickOnMyDashboardButtonUnderAccountMenu()
         {
-            ScenarioContext.Current.Pending();
+            Console.WriteLine("test");
         }
         
         [Then(@"“My Dashboard” page is opened")]
         public void ThenMyDashboardPageIsOpened()
         {
-            ScenarioContext.Current.Pending();
+            Console.WriteLine("test");
         }
         
         [Then(@"correct value is prefilled in email verification placeholder")]
         public void ThenCorrectValueIsPrefilledInEmailVerificationPlaceholder()
         {
-            ScenarioContext.Current.Pending();
+            Console.WriteLine("test");
         }
     }
 }
