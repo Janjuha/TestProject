@@ -64,8 +64,8 @@ namespace Booking_Project
             regMainPage.SelectChildren(children);
         }
         
-        [When(@"I click on '(.*)' button")]
-        public void WhenIClickOnButton(string p0)
+        [When(@"I click on Search button")]
+        public void WhenIClickOnButton()
         {
             regMainPage.SearchHotel();
         }
@@ -88,7 +88,7 @@ namespace Booking_Project
             Console.WriteLine("test");
         }
         
-        [When(@"I click on '(.*)'ll Reserve' button")]
+        [When(@"I click on '(.*)' button")]
         public void WhenIClickOnLlReserveButton(string p0)
         {
             Console.WriteLine("test");

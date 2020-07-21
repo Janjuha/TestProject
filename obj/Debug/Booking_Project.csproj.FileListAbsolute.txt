@@ -81,8 +81,8 @@ C:\Users\j.krupskis\Desktop\GitHub\Booking_Project\bin\Debug\TechTalk.SpecFlow.N
 C:\Users\j.krupskis\Desktop\GitHub\Booking_Project\bin\Debug\Utf8Json.xml
 C:\Users\j.krupskis\Desktop\GitHub\Booking_Project\bin\Debug\WebDriver.xml
 C:\Users\j.krupskis\Desktop\GitHub\Booking_Project\bin\Debug\WebDriver.Support.xml
-C:\Users\j.krupskis\Desktop\GitHub\Booking_Project\obj\Debug\Booking_Project.csprojAssemblyReference.cache
 C:\Users\j.krupskis\Desktop\GitHub\Booking_Project\obj\Debug\Booking_Project.csproj.CoreCompileInputs.cache
 C:\Users\j.krupskis\Desktop\GitHub\Booking_Project\obj\Debug\Booking_Project.csproj.CopyComplete
 C:\Users\j.krupskis\Desktop\GitHub\Booking_Project\obj\Debug\Booking_Project.dll
 C:\Users\j.krupskis\Desktop\GitHub\Booking_Project\obj\Debug\Booking_Project.pdb
+C:\Users\j.krupskis\Desktop\GitHub\Booking_Project\obj\Debug\Booking_Project.csprojAssemblyReference.cache

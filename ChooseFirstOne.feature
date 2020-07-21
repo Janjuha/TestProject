@@ -8,7 +8,7 @@ Scenario: Choose first one hotel
 	When I set up destination as 'Liepāja'
 	And I set dates '28-08-2020' - '10-09-2020'
 	And I select '10' adults and '5' children
-	And I click on 'Search' button
+	And I click on Search button
 	And I click on 'Choose your room' for fist hotel in the list
 	And 'Hotel Details' page is opened for selected hotel
 	And I click on 'Reserve' button for recommended room
