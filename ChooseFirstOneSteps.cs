@@ -73,43 +73,43 @@ namespace Booking_Project
         [When(@"I click on '(.*)' for fist hotel in the list")]
         public void WhenIClickOnForFistHotelInTheList(string p0)
         {
-            ScenarioContext.Current.Pending();
+            Console.WriteLine("test");
         }
         
         [When(@"'(.*)' page is opened for selected hotel")]
         public void WhenPageIsOpenedForSelectedHotel(string p0)
         {
-            ScenarioContext.Current.Pending();
+            Console.WriteLine("test");
         }
         
         [When(@"I click on '(.*)' button for recommended room")]
         public void WhenIClickOnButtonForRecommendedRoom(string p0)
         {
-            ScenarioContext.Current.Pending();
+            Console.WriteLine("test");
         }
         
         [When(@"I click on '(.*)'ll Reserve' button")]
         public void WhenIClickOnLlReserveButton(string p0)
         {
-            ScenarioContext.Current.Pending();
+            Console.WriteLine("test");
         }
         
         [Then(@"'(.*)' page is displayed")]
         public void ThenPageIsDisplayed(string p0)
         {
-            ScenarioContext.Current.Pending();
+            Console.WriteLine("test");
         }
         
         [Then(@"I enter valid booking information")]
         public void ThenIEnterValidBookingInformation()
         {
-            ScenarioContext.Current.Pending();
+            Console.WriteLine("test");
         }
         
         [Then(@"I click on '(.*)' button")]
         public void ThenIClickOnButton(string p0)
         {
-            ScenarioContext.Current.Pending();
+            Console.WriteLine("test");
         }
     }
 }
