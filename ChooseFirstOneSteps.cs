@@ -12,7 +12,7 @@ namespace Booking_Project
     [Binding]
     public class ChooseFirstOneSteps
     {
-        static IWebDriver driver = new FirefoxDriver();
+        static IWebDriver driver = new ChromeDriver();
         MainPage mainPage = new MainPage(driver);
         SignInPage signInPage = new SignInPage(driver);
         RegisteredMainPage regMainPage = new RegisteredMainPage(driver);
@@ -22,12 +22,14 @@ namespace Booking_Project
         public void GivenIHaveAccountCreated()
         {
             CustomMethods.GoToURL(driver, "https://booking.com");
-            Thread.Sleep(2000);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            //Thread.Sleep(2000);
             mainPage.ChooseDefaultSettings();
             mainPage.GoToSignInPage();
 
             signInPage.TypeCredentials();
-            Thread.Sleep(5000);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            //Thread.Sleep(5000);
             CustomMethods.AcceptCookie(driver);
         }
         
@@ -43,16 +45,17 @@ namespace Booking_Project
             regMainPage.Destination.Click();
             regMainPage.Destination.Clear();
             regMainPage.SetDestination(destination);
-            Thread.Sleep(1000);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             Assert.AreEqual(destination, regMainPage.GetDestionationText());
             regMainPage.ClickOnDestionation();
-            Thread.Sleep(1000);
+            //Thread.Sleep(1000);
         }
         
         [When(@"I set dates '(.*)' - '(.*)'")]
         public void WhenISetDates_(string startDate, string endDate)
         {
-            Thread.Sleep(200);
+            //Thread.Sleep(200);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             CustomMethods.clickOnDate(driver, CustomMethods.ChangeFormat(startDate));
             CustomMethods.clickOnDate(driver, CustomMethods.ChangeFormat(endDate));
         }
