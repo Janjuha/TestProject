@@ -34,10 +34,12 @@ namespace Booking_Project.Pages
 
         public void TypeCredentials()
         {
-            Thread.Sleep(1000);
+            //Thread.Sleep(1000);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             InputUsername.SendKeys("janjuha1@gmail.com");
             NextBtn.Click();
-            Thread.Sleep(1000);
+            //Thread.Sleep(1000);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             InputPassword.SendKeys("Webapp!1");
             SignInBtn.Click();
         }

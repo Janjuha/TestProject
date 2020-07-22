@@ -40,9 +40,11 @@ namespace Booking_Project
         {
             LngElement.Click();
             EnglishLng.Click();
-            System.Threading.Thread.Sleep(1000);
+            //System.Threading.Thread.Sleep(1000);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             CurrencyElement.Click();
-            System.Threading.Thread.Sleep(1000);
+            //System.Threading.Thread.Sleep(1000);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             if (!USDCurrency.GetAttribute("class").Contains("selected_currency"))
             {
                 USDCurrency.Click();

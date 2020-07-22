@@ -24,7 +24,8 @@ namespace Booking_Project
         [When(@"I enter valid user email")]
         public void WhenIEnterValidUserEmail()
         {
-            Thread.Sleep(1000);
+            //Thread.Sleep(1000);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             registerPage.TypeEmail();
         }
         
@@ -37,7 +38,8 @@ namespace Booking_Project
         [When(@"I enter valid password")]
         public void WhenIEnterValidPassword()
         {
-            Thread.Sleep(1000);
+            //Thread.Sleep(1000);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             registerPage.TypePassword();
         }
         
