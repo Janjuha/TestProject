@@ -56,9 +56,17 @@ namespace Booking_Project
         [FindsBy(How = How.XPath, Using = "//*[@id='frm']/div[1]/div[4]/div[2]/button")]
         public IWebElement SearchBtn { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//*[@id='b2indexPage']/div[25]/button")]
+        public IWebElement ClosePopupBtn { get; set; }
+
         public void GoToProfile()
         {
             Profile.Click();
+        }
+
+        public void ClosePopUpWindow()
+        {
+            ClosePopupBtn.Click();
         }
 
         public void SetDestination(string destination)

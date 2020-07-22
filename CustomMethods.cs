@@ -59,6 +59,7 @@ namespace Booking_Project
             return newDate;
         }
 
+
         public static void clickOnDate(IWebDriver driver, string dateToClick)
         {
             bool isDisplayed = false;
@@ -76,5 +77,19 @@ namespace Booking_Project
                 }
             }
         }
+
+        public static string GenerateEmail()
+        {
+            string abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".ToLower();
+            string newEmail = "";
+            Random r = new Random();
+            for (int i = 0; i < 10; i++)
+            {
+                int x = r.Next(abc.Length);
+                newEmail += abc[x];
+            }
+            return newEmail + "@inbox.lv";
+        }
+
     }
 }

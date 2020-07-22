@@ -12,6 +12,7 @@ namespace Booking_Project
     class RegisterPage
     {
         private IWebDriver driver;
+        public string registerEmail = CustomMethods.GenerateEmail();
         public RegisterPage(IWebDriver driver)
         {
             this.driver = driver;
@@ -30,9 +31,14 @@ namespace Booking_Project
         [FindsBy(How = How.Name, Using = "confirmed_password")]
         public IWebElement ConfirmPassword { get; set; }
 
+        [FindsBy(How = How.XPath, Using = "//*[@id='root']/div/div[2]/div/div[1]/div[2]/div/div/div/form/button")]
+        public IWebElement CreateAccountBtn { get; set; }
+
+
+        //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div/div/form/button
         public void TypeEmail()
         {
-            InputFieldEmail.SendKeys("janjuha2@gmail.com");
+            InputFieldEmail.SendKeys(registerEmail);
         }
 
         public void PressStart()
@@ -42,8 +48,13 @@ namespace Booking_Project
 
         public void TypePassword()
         {
-            InputPassword.SendKeys("12345678");
-            ConfirmPassword.SendKeys("12345678");
+            InputPassword.SendKeys("Webapp!1");
+            ConfirmPassword.SendKeys("Webapp!1");
+        }
+
+        public void CreateAccount()
+        {
+            CreateAccountBtn.Click();
         }
     }
 }

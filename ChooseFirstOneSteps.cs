@@ -22,7 +22,7 @@ namespace Booking_Project
         public void GivenIHaveAccountCreated()
         {
             CustomMethods.GoToURL(driver, "https://booking.com");
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            //driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             //Thread.Sleep(2000);
             mainPage.ChooseDefaultSettings();
             mainPage.GoToSignInPage();

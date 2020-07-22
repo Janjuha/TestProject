@@ -1,6 +1,8 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
+using System.Runtime.InteropServices;
 using System.Threading;
 using TechTalk.SpecFlow;
 
@@ -12,12 +14,15 @@ namespace Booking_Project
         static IWebDriver driver = new ChromeDriver();
         MainPage mainPage = new MainPage(driver);
         RegisterPage registerPage = new RegisterPage(driver);
+        RegisteredMainPage registeredPage = new RegisteredMainPage(driver);
 
         [Given(@"I am in Sign Up page")]
         public void GivenIAmInSignUpPage()
         {
             CustomMethods.GoToURL(driver, "https://booking.com");
             mainPage.ChooseDefaultSettings();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            Assert.AreEqual("Booking.com | Official site | The best hotels & accommodations", driver.Title);
             mainPage.GotToRegisterPage();
         }
         
@@ -46,31 +51,39 @@ namespace Booking_Project
         [When(@"click on “Create Account” button")]
         public void WhenClickOnCreateAccountButton()
         {
-            Console.WriteLine("test");
+            registerPage.CreateAccount();
         }
         
         [When(@"main page is opened")]
         public void WhenMainPageIsOpened()
         {
-            Console.WriteLine("test");
+            Console.WriteLine("Main Page is Opened");
+            CustomMethods.AcceptCookie(driver);
+            for (int i = 0; i < 2; i++)
+            {
+                driver.Navigate().Refresh();
+            }
         }
         
         [When(@"I click on “My Dashboard” button under account menu")]
         public void WhenIClickOnMyDashboardButtonUnderAccountMenu()
         {
-            Console.WriteLine("test");
+            mainPage.SignInBtn.Click();
+            //Thread.Sleep(2000);
+            mainPage.MyDashboard.Click();
         }
         
         [Then(@"“My Dashboard” page is opened")]
         public void ThenMyDashboardPageIsOpened()
         {
-            Console.WriteLine("test");
+            Console.WriteLine("My Dashboard is opened");
         }
         
         [Then(@"correct value is prefilled in email verification placeholder")]
         public void ThenCorrectValueIsPrefilledInEmailVerificationPlaceholder()
         {
-            Console.WriteLine("test");
+            Assert.AreEqual(registerPage.registerEmail, mainPage.DashboardEmailInput.GetAttribute("value"));
+            driver.Close();
         }
     }
 }

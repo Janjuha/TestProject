@@ -12,6 +12,7 @@ namespace Booking_Project.Pages
     class SignInPage
     {
         private IWebDriver driver;
+        public string email = "janjuha1@gmail.com";
         public SignInPage(IWebDriver driver)
         {
             this.driver = driver;
@@ -36,7 +37,7 @@ namespace Booking_Project.Pages
         {
             //Thread.Sleep(1000);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-            InputUsername.SendKeys("janjuha1@gmail.com");
+            InputUsername.SendKeys(email);
             NextBtn.Click();
             //Thread.Sleep(1000);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);

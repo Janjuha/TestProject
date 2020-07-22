@@ -1,6 +1,7 @@
 ﻿using Booking_Project.Pages;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,8 @@ namespace Booking_Project
         [FindsBy(How = How.XPath, Using = "//*[@id='user_form']/ul/li[1]")]
         public IWebElement CurrencyElement { get; set; }
 
+        //************************************************
+
         [FindsBy(How = How.XPath, Using = "//*[@id='currency_dropdown_top']/ul[1]/li[1]")]
         public IWebElement USDCurrency { get; set; }
 
@@ -36,6 +39,12 @@ namespace Booking_Project
         [FindsBy(How = How.Id, Using = "current_account")]
         public IWebElement SignInBtn { get; set; }
 
+        [FindsBy(How = How.CssSelector, Using = "#profile-menu > div.profile-menu__item.profile_menu__item--mydashboard")]
+        public IWebElement MyDashboard { get; set; }
+
+        [FindsBy(How = How.CssSelector, Using = "#dashboard_container > div > div > div.db_data_content_area.dashboard_height_auto_adjust.dashboard-content-setion > div.email-confirm-banner > div.email-confirm-banner__right > div.email-confirm-banner__resend-block > div.email-confirm-banner__email > input")]
+        public IWebElement DashboardEmailInput { get; set; }
+
         public void ChooseDefaultSettings()
         {
             LngElement.Click();
@@ -44,6 +53,7 @@ namespace Booking_Project
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             CurrencyElement.Click();
             //System.Threading.Thread.Sleep(1000);
+            new WebDriverWait(driver, TimeSpan.FromSeconds(10)).Until(ExpectedConditions.ElementExists(By.XPath("//*[@id='currency_dropdown_top']/ul[1]/li[1]")));
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             if (!USDCurrency.GetAttribute("class").Contains("selected_currency"))
             {
