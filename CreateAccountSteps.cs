@@ -59,6 +59,8 @@ namespace Booking_Project
         {
             Console.WriteLine("Main Page is Opened");
             CustomMethods.AcceptCookie(driver);
+            //Here I'm cheating, because time to time there are random banners for the new registered clients,
+            //I'm just refreshing the page 2 times to skip them :(
             for (int i = 0; i < 2; i++)
             {
                 driver.Navigate().Refresh();
